@@ -274,7 +274,7 @@ def load_data(partition_id: int, num_partitions: int):
 
     #Modificação implementada para balanceamento da base, definimos o numero maximo de imagens por classe
     #Então geramos o dataset pros clientes
-    # Defina aqui quantas imagens você quer por classe (ex: 50)
+    # Define quantas imagens por classe
     MAX_IMGS_POR_CLASSE = 50 
     
     # Obtemos os índices originais do DataFrame que correspondem à nossa seleção balanceada
@@ -401,3 +401,4 @@ def set_weights(net, parameters):
     params_dict = zip(net.state_dict().keys(), parameters)
     state_dict = OrderedDict({k: torch.tensor(v) for k, v in params_dict})
     net.load_state_dict(state_dict, strict=True)
+
